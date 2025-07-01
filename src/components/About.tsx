@@ -1,83 +1,88 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-
 const About = () => {
-  const skills = [
-    "React", "TypeScript", "Node.js", "Python", "AWS",
-    "Docker", "PostgreSQL", "MongoDB", "GraphQL", "REST APIs"
-  ];
-
   return (
-    <section id="about" className="py-20 px-6 relative">
+    <section id="about" className="py-20 px-6 bg-[#030303] relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-10 right-10 w-64 h-64 border border-white/5 rounded-full"></div>
-        <div className="absolute bottom-20 left-10 w-32 h-32">
-          <svg viewBox="0 0 100 100" className="w-full h-full text-white/5">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100" height="100" fill="url(#grid)" />
-          </svg>
-        </div>
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-white/5 rounded-full"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-24 h-24 border border-white/5 rotate-45"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Passionate about creating innovative solutions and turning complex problems into elegant code.
-          </p>
+          <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            {/* Decorative lines */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 border-l-2 border-t-2 border-white/20"></div>
+          <div className="space-y-6">
+            <p className="text-lg text-white/80 leading-relaxed">
+              I'm a passionate software developer with over 5 years of experience creating 
+              digital solutions that make a difference. I specialize in modern web technologies 
+              and love turning complex problems into simple, beautiful, and intuitive designs.
+            </p>
+            <p className="text-lg text-white/80 leading-relaxed">
+              When I'm not coding, you can find me exploring new technologies, contributing to 
+              open-source projects, or sharing knowledge with the developer community.
+            </p>
             
-            <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
-            <p className="text-white/70 mb-6 leading-relaxed">
-              With over 5 years of experience in software development, I've had the privilege of working 
-              on diverse projects ranging from scalable web applications to complex backend systems. 
-              My passion lies in writing clean, maintainable code and creating seamless user experiences.
-            </p>
-            <p className="text-white/70 mb-6 leading-relaxed">
-              I believe in continuous learning and staying up-to-date with the latest technologies 
-              and best practices in the industry. When I'm not coding, you can find me contributing 
-              to open-source projects or exploring new frameworks.
-            </p>
-
-            {/* Bottom decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-6 h-6 border-r-2 border-b-2 border-white/20"></div>
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              <div className="text-center p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                <div className="text-2xl font-bold text-blue-400 mb-2">50+</div>
+                <div className="text-white/70">Projects Completed</div>
+              </div>
+              <div className="text-center p-4 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                <div className="text-2xl font-bold text-purple-400 mb-2">5+</div>
+                <div className="text-white/70">Years Experience</div>
+              </div>
+            </div>
           </div>
 
-          <Card className="p-6 bg-white/5 border-white/10 backdrop-blur-sm relative overflow-hidden">
-            {/* Card background pattern */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-4 right-4 w-16 h-16 border border-white/20 rounded rotate-12"></div>
-              <div className="absolute bottom-4 left-4 w-12 h-12 border border-white/10 rounded-full"></div>
-            </div>
-            
-            <CardContent className="p-0 relative z-10">
-              <h4 className="text-xl font-semibold mb-4">Skills & Technologies</h4>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className={`px-3 py-1 bg-white/10 border border-white/20 rounded-full text-sm font-medium backdrop-blur-sm hover:bg-white/20 transition-colors ${
-                      index % 3 === 0 ? 'hover:border-blue-400/50' : 
-                      index % 3 === 1 ? 'hover:border-purple-400/50' : 
-                      'hover:border-green-400/50'
-                    }`}
-                  >
-                    {skill}
-                  </span>
-                ))}
+          <div className="relative">
+            <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-8 backdrop-blur-sm border border-white/10">
+              <div className="w-full h-full rounded-xl bg-white/10 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-purple-400 mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">HC</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Hariharan Chandran</h3>
+                  <p className="text-white/70">Full Stack Developer</p>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills section */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-center mb-12 text-white">Technical Skills</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                category: "Frontend",
+                skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"]
+              },
+              {
+                category: "Backend", 
+                skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL"]
+              },
+              {
+                category: "Tools & Others",
+                skills: ["Git", "Docker", "AWS", "Figma", "Jest"]
+              }
+            ].map((skillGroup, index) => (
+              <div key={index} className="text-center p-6 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                <h4 className="text-lg font-semibold mb-4 text-white">{skillGroup.category}</h4>
+                <div className="space-y-2">
+                  {skillGroup.skills.map((skill) => (
+                    <div key={skill} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
+                      {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
