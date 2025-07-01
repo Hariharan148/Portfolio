@@ -1,11 +1,9 @@
 
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-
 
 function ElegantShape({
     className,
@@ -83,16 +81,14 @@ function HeroGeometric({
     title2?: string;
 }) {
     const fadeUpVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: (i: number) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 1,
-                delay: 0.5 + i * 0.2,
-                ease: "easeOut",
-            },
-        }),
+        hidden: { 
+            opacity: 0, 
+            y: 30 
+        },
+        visible: { 
+            opacity: 1, 
+            y: 0 
+        }
     };
 
     return (
@@ -152,10 +148,14 @@ function HeroGeometric({
                     <div className="max-w-3xl mx-auto text-center">
                         {badge && (
                             <motion.div
-                                custom={0}
                                 variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.5,
+                                    ease: "easeOut",
+                                }}
                                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
                             >
                                 <Circle className="h-2 w-2 fill-rose-500/80" />
@@ -167,10 +167,14 @@ function HeroGeometric({
 
                         {(title1 || title2) && (
                             <motion.div
-                                custom={1}
                                 variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
+                                transition={{
+                                    duration: 1,
+                                    delay: 0.7,
+                                    ease: "easeOut",
+                                }}
                             >
                                 <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
                                     {title1 && (
@@ -193,10 +197,14 @@ function HeroGeometric({
                         )}
 
                         <motion.div
-                            custom={2}
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
+                            transition={{
+                                duration: 1,
+                                delay: 0.9,
+                                ease: "easeOut",
+                            }}
                         >
                             <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
                                 Crafting exceptional digital experiences through

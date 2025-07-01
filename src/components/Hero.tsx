@@ -6,16 +6,14 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const fadeUpVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        delay: 0.5 + i * 0.2,
-        ease: "easeOut",
-      },
-    }),
+    hidden: { 
+      opacity: 0, 
+      y: 30 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0 
+    }
   };
 
   return (
@@ -24,10 +22,14 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            custom={0}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
+            transition={{
+              duration: 1,
+              delay: 0.5,
+              ease: "easeOut",
+            }}
             className="mb-6"
           >
             <span className="inline-block px-4 py-2 rounded-full border border-white/20 bg-white/5 text-white/80 text-sm mb-6 backdrop-blur-sm">
@@ -47,10 +49,14 @@ const Hero = () => {
           
           {/* Code snippet showcase */}
           <motion.div
-            custom={1}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
+            transition={{
+              duration: 1,
+              delay: 0.7,
+              ease: "easeOut",
+            }}
             className="code-block-bg rounded-lg p-6 mb-8 text-left max-w-2xl mx-auto"
           >
             <div className="flex items-center space-x-2 mb-4">
@@ -74,10 +80,14 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            custom={2}
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
+            transition={{
+              duration: 1,
+              delay: 0.9,
+              ease: "easeOut",
+            }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
             <Button size="lg" className="text-lg px-8 py-6 bg-white text-black hover:bg-white/90 glow-effect">
