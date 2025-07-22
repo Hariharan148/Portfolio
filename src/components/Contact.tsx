@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,9 +15,9 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 text-white">Get In Touch</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#B6C7F9] via-white to-[#F9B6C7] mx-auto mb-8"></div>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Ready to start your next project? Let's discuss how we can work together 
-            to bring your ideas to life.
+            Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
           </p>
         </div>
 
@@ -30,56 +29,44 @@ const Contact = () => {
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
-                      First Name
-                    </label>
-                    <Input 
+                    <label className="block text-sm font-medium text-white/80 mb-2">First Name</label>
+                    <Input
                       placeholder="John"
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-white/80 mb-2">
-                      Last Name
-                    </label>
-                    <Input 
+                    <label className="block text-sm font-medium text-white/80 mb-2">Last Name</label>
+                    <Input
                       placeholder="Doe"
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/80 mb-2">
-                    Email
-                  </label>
-                  <Input 
+                  <label className="block text-sm font-medium text-white/80 mb-2">Email</label>
+                  <Input
                     type="email"
                     placeholder="john@example.com"
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/80 mb-2">
-                    Subject
-                  </label>
-                  <Input 
+                  <label className="block text-sm font-medium text-white/80 mb-2">Subject</label>
+                  <Input
                     placeholder="Project Discussion"
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/80 mb-2">
-                    Message
-                  </label>
-                  <Textarea 
+                  <label className="block text-sm font-medium text-white/80 mb-2">Message</label>
+                  <Textarea
                     placeholder="Tell me about your project..."
                     rows={5}
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                   />
                 </div>
-                <Button className="w-full bg-white text-black hover:bg-white/90 font-semibold">
-                  Send Message
-                </Button>
+                <Button className="w-full bg-white text-black hover:bg-white/90 font-semibold">Send Message</Button>
               </form>
             </div>
           </div>
@@ -95,10 +82,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-white">Email</p>
-                    <p className="text-white/70">hello@hariharandev.com</p>
+                    <p className="text-white/70">hariharan.chandran04@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                {/* <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                     <Phone className="h-5 w-5 text-green-400" />
                   </div>
@@ -106,24 +93,24 @@ const Contact = () => {
                     <p className="font-medium text-white">Phone</p>
                     <p className="text-white/70">+1 (555) 123-4567</p>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
                     <MapPin className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
                     <p className="font-medium text-white">Location</p>
-                    <p className="text-white/70">San Francisco, CA</p>
+                    <p className="text-white/70">Coimbatore, India</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            {/* <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
               <h3 className="text-xl font-semibold mb-4 text-white">Quick Response</h3>
               <p className="text-white/70 mb-4">
-                I typically respond to messages within 24 hours. For urgent matters, 
-                feel free to call or text me directly.
+                I typically respond to messages within 24 hours. For urgent matters, feel free to call or text me
+                directly.
               </p>
               <div className="flex space-x-4">
                 <div className="text-center">
@@ -135,7 +122,7 @@ const Contact = () => {
                   <div className="text-sm text-white/70">Satisfaction</div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

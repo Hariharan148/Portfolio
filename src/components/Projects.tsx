@@ -1,29 +1,63 @@
-
-import GlassCard from "@/components/ui/glass-card";
+import ProjectGlassCard from "@/components/ui/project-glass-card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
+
+// Types for better type safety and structure
+interface ProjectTech {
+  name: string;
+  color: string;
+}
+
+interface ProjectStats {
+  stars?: number;
+  forks?: number;
+}
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  longDescription?: string;
+  tech: ProjectTech[];
+  image: string;
+  githubUrl?: string;
+  demoUrl?: string;
+  status: "completed" | "in-progress" | "planning";
+  featured: boolean;
+  createdDate: string;
+  stats?: ProjectStats;
+  category: string;
+}
 
 const Projects = () => {
-  const projects = [
+  // Replace this with your actual project data
+  const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+      id: "waitlist-tool",
+      title: "Waitlist Tool",
+      description: "A no-code platform to help founders launch customizable waitlist pages 10x faster",
+      longDescription: "A no-code platform to help founders launch customizable waitlist pages 10x faster",
+      tech: [
+        { name: "React", color: "bg-blue-500/20 text-blue-300 border-blue-500/30" },
+        { name: "TypeScript", color: "bg-blue-600/20 text-blue-400 border-blue-600/30" },
+        { name: "Tailwind CSS", color: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30" },
+        { name: "Vite", color: "bg-purple-500/20 text-purple-300 border-purple-500/30" },
+      ],
+      image: "/projects/launchpage.png",
+
+      demoUrl: "https://launch-page-mvp.vercel.app/",
+      status: "completed",
+      featured: true,
+      createdDate: "2024-01-15",
+      category: "Web Development",
+      stats: { stars: 12, forks: 3 },
     },
-    {
-      title: "Task Management App", 
-      description: "A collaborative task management application with real-time updates, file sharing, and team collaboration features.",
-      tech: ["TypeScript", "React", "Socket.io", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop"
-    },
-    {
-      title: "Analytics Dashboard",
-      description: "A comprehensive analytics dashboard for business intelligence with interactive charts, data visualization, and reporting capabilities.",
-      tech: ["Vue.js", "D3.js", "Python", "FastAPI"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
-    }
   ];
+
+  // Only keep featured projects
+  const featuredProjects = projects.filter((project) => project.featured);
+
+  const ProjectCard = ({ project }: { project: Project }) => <ProjectGlassCard project={project} />;
 
   return (
     <section id="projects" className="py-20 px-6 bg-[#030303] relative overflow-hidden">
@@ -40,57 +74,35 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-white">Featured Projects</h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on that showcase my skills and passion for development.
+          <h2 className="text-4xl font-bold mb-4 text-white">Projects</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#B6C7F9] via-white to-[#F9B6C7] mx-auto mb-8"></div>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            Here are some of the projects I've worked on that showcase my skills and passion for development. Each
+            project represents a unique challenge and learning experience.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          {projects.map((project, index) => (
-            <div key={index} className="relative">
-              <GlassCard className="h-[350px] w-[320px]">
-                <div className="absolute inset-0 p-6 flex flex-col justify-between [transform:translate3d(0,0,27px)]">
-                  <div>
-                    <div className="aspect-video overflow-hidden rounded-lg mb-4 relative">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover opacity-80"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{project.title}</h3>
-                    <p className="text-sm text-zinc-300 mb-4 line-clamp-3">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      {project.tech.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded text-xs font-medium backdrop-blur-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1 border-white/20 text-white hover:bg-white/10 h-8 text-xs">
-                      <Github className="h-3 w-3 mr-1" />
-                      Code
-                    </Button>
-                    <Button size="sm" className="flex-1 bg-white text-black hover:bg-white/90 h-8 text-xs">
-                      <ExternalLink className="h-3 w-3 mr-1" />
-                      Demo
-                    </Button>
-                  </div>
-                </div>
-              </GlassCard>
-            </div>
+        {/* Featured Projects Only */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mb-16">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <p className="text-white/70 mb-4">Want to see more of my work?</p>
+          <Button
+            variant="outline"
+            className="border-white/20 text-white hover:bg-white/10"
+            onClick={() => window.open("https://github.com/Hariharan148", "_blank")}
+          >
+            <Github className="h-4 w-4 mr-2" />
+            View All Projects on GitHub
+          </Button>
         </div>
       </div>
     </section>

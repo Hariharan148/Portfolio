@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -22,28 +21,28 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Hariharan148"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5 text-white" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/hariharanc-"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5 text-white" />
               </a>
-              <a
+              {/* <a
                 href="https://twitter.com"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5 text-white" />
-              </a>
+              </a> */}
               <a
-                href="mailto:hello@hariharandev.com"
+                href="mailto:hariharan.chandran04@gmail.com"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Email"
               >
@@ -78,26 +77,24 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Get In Touch</h4>
             <div className="space-y-2">
-              <p className="text-white/70">hello@hariharandev.com</p>
-              <p className="text-white/70">+1 (555) 123-4567</p>
-              <p className="text-white/70">San Francisco, CA</p>
+              <p className="text-white/70">hariharan.chandran04@gmail.com</p>
+              {/* <p className="text-white/70">+91 9842000000</p> */}
+              <p className="text-white/70">Coimbatore, India</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-white/60 text-sm">
-              © {currentYear} Hariharan Chandran. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+            <p className="text-white/60 text-sm">© {currentYear} Hariharan Chandran. All rights reserved.</p>
+            {/* <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white/60 hover:text-white transition-colors">
                 Privacy Policy
               </a>
               <a href="#" className="text-white/60 hover:text-white transition-colors">
                 Terms of Service
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

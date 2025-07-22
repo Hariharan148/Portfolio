@@ -1,14 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-md bg-transparent">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-bold text-xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <span className=" homemade-apple-regular text-2xl font-bold bg-gradient-to-r from-[#B6C7F9] via-white to-[#F9B6C7] bg-clip-text text-transparent">
             HC
-          </div>
+          </span>
           <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="text-white/70 hover:text-white transition-colors relative group">
               About
