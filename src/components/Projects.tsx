@@ -43,7 +43,7 @@ const Projects = () => {
         { name: "Tailwind CSS", color: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30" },
         { name: "Vite", color: "bg-purple-500/20 text-purple-300 border-purple-500/30" },
       ],
-      image: "/projects/launchpage.png",
+      image: "/projects/launchpage1.png",
 
       demoUrl: "https://launchkitmvp.vercel.app/",
       status: "completed",
