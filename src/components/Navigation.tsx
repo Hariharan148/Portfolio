@@ -23,7 +23,7 @@ const Navigation = () => {
             </a>
           </div>
           <a
-            href="https://mjeottlrahrybtxbngcq.supabase.co/storage/v1/object/public/cv//Hariharan_Chandran_CV.pdf"
+            href="https://firebasestorage.googleapis.com/v0/b/wakeup-automation.firebasestorage.app/o/Hariharan_Chandran_CV.pdf?alt=media&token=77850ed5-1a7c-4016-9937-9b4d4066459a"
             target="_blank"
             rel="noopener noreferrer"
           >
