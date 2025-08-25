@@ -45,7 +45,7 @@ const Projects = () => {
       ],
       image: "/projects/launchpage.png",
 
-      demoUrl: "https://launch-page-mvp.vercel.app/",
+      demoUrl: "https://launchkitmvp.vercel.app/",
       status: "completed",
       featured: true,
       createdDate: "2024-01-15",
